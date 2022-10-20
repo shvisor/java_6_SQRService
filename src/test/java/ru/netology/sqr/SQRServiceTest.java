@@ -8,14 +8,8 @@ public class SQRServiceTest {
 
     @ParameterizedTest
     @CsvFileSource(files="src/test/resources/squarerange.csv")
-    void numberOfSquaresInTheRange() {
+    public void numberOfSquaresInTheRange(int expected, int lowerNumber, int upperNumber, int lowerLimit, int upperLimit) {
         SQRService service = new SQRService();
-
-        int lowerNumber = 10;
-        int upperNumber = 99;
-        int lowerLimit = 200;
-        int upperLimit = 300;
-        int expected = 3;
 
         int actual = service.squareRange(lowerNumber, upperNumber, lowerLimit, upperLimit);
 
